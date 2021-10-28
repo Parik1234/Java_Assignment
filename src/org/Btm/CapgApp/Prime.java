@@ -3,22 +3,41 @@ package org.Btm.CapgApp;
 import java.util.Scanner;
 
 public class Prime {
-	int toPrimeNumber(int x) {
-		for(int i=2; i<=x/2; i++)
-		{
-			if(x%i==0)
-			{
-				
+	public static void main(String[] args) {
+
+		primeNum();
+	}
+
+	// method for display all the prime numbee in range
+	public static void primeNum() {
+		Scanner scn = new Scanner(System.in);
+
+		// Asking for user input
+		System.out.println("Enter range for prime number: ");
+		int n = scn.nextInt();
+		System.out.println("Prime numbers between 1 to " + n + " are: ");
+
+		
+		for (int i = 1; i <= n; i++) {
+			if (i <= 1)
+				continue;
+			boolean flag = true;
+			for (int j = 2; j <= i / 2; j++) {
+				if (i % j == 0) {
+					flag = false;
+					break;
+				}
+			}
+
+			// the prime number.
+			if (flag == true) {
+				System.out.print(i + " ");
 			}
 		}
-	return x;	
+
+		// closing all the resource.
+		scn.close();
 	}
-	public static void main(String[] args)
-	{
-		Scanner obj=new Scanner(System.in);
-		int n=obj.nextInt();
-		Prime p=new Prime();
-		p.toPrimeNumber(n);
-	}
+
 
 }

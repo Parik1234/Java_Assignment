@@ -16,6 +16,7 @@ public class Power {
 	}
 	public static void main(String[] args)
 	{
+		System.out.println("enter the value");
 		Scanner obj=new Scanner(System.in);
 		int n=obj.nextInt();
 		Power p=new Power();
